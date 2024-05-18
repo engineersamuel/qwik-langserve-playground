@@ -1,0 +1,173 @@
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --qwik-dark-blue: #006ce9;
+  --qwik-light-blue: #18b6f6;
+  --qwik-light-purple: #ac7ff4;
+  --qwik-dark-purple: #713fc2;
+  --qwik-dirty-black: #1d2033;
+  --qwik-light-background: #f8f7ff;
+  --qwik-dark-background: #151934;
+  --qwik-dark-text: #ffffff;
+  --qwik-light-text: #053d5c;
+  --qwik-disabled-btn: rgba(4, 61, 92, 0.2);
+  --qwik-enabled-btn: rgba(4, 61, 92, 0.2);
+}
+
+html {
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+}
+
+@layer base {
+  * {
+    color: #043d5c;
+    font-weight: 300;
+    @font-face {
+      font-family: "Manrope";
+      src: url("/dist/Manrope-VariableFont_wght.ttf") format("truetype");
+    }
+    border-color: #043d5c;
+  }
+
+  input,
+  textarea,
+  select {
+    background: transparent;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  :root {
+    --popover: 0 0% 100%;
+    --background: #f8f7ff;
+
+    --divider-500: 210 40% 96.1%; /* slate-100 */
+    --divider-700: 214.3 31.8% 91.4%; /* slate-200 */
+
+    --ls-blue: 211.5 91.8% 61.8%;
+    --ls-black: 222.2 47.4% 11.2%; /* slate-900 */
+    --ls-gray-100: 215.4 16.3% 46.9%; /* slate-500 */
+    --ls-gray-200: 212.7 26.8% 83.9%; /* slate-300 */
+    --ls-gray-300: 214.3 31.8% 91.4%; /* slate-200 */
+    --ls-gray-400: 210 40% 96.1%; /* slate-100 */
+
+    --button-green: #162e2e;
+    --button-green-disabled: rgba(4, 61, 92, 0.2);
+    --button-inline: #006ba41a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --popover: 240 11.6% 8.4%;
+
+      --divider-500: 217.2 32.6% 17.5%; /* slate-800 */
+      --divider-700: 215.3 25% 26.7%; /* slate-700 */
+
+      --ls-blue: 211.5 91.8% 61.8%;
+      --ls-black: 0 0% 100%; /* white */
+      --ls-gray-100: 215 20.2% 65.1%; /* slate-400 */
+      --ls-gray-200: 215.4 16.3% 46.9%; /* slate-500 */
+      --ls-gray-300: 215.3 25% 26.7%; /* slate-700 */
+      --ls-gray-400: 217.2 32.6% 17.5%; /* slate-800 */
+    }
+  }
+}
+
+.control {
+  /* @apply border-divider-700 bg-background outline-ls-blue/20 relative flex flex-col gap-1 rounded-lg border p-3 transition-all; */
+  @apply relative flex flex-col gap-1 rounded-lg border p-3 transition-all;
+  @apply focus-within:outline focus-within:outline-4;
+}
+
+.control > label,
+.control h6 {
+  /* @apply text-ls-gray-100 text-xs font-semibold uppercase; */
+  @apply text-xs font-semibold uppercase text-gray-100;
+}
+
+.control div .MuiGrid-item {
+  @apply pt-0;
+}
+
+.control > select {
+  @apply -ml-1;
+}
+
+.control > .input-description,
+.control > .validation {
+  @apply absolute right-3 top-3 text-xs;
+}
+
+.group-layout {
+  /* @apply bg-background border-divider-700 flex flex-col gap-4 rounded-lg border p-4; */
+  @apply flex flex-col gap-4 rounded-lg border p-4;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.vertical-layout {
+  @apply flex flex-col gap-4;
+}
+
+.share-button {
+  border: 1px solid var(--qwik-light-text);
+}
+
+.share-button:hover {
+  boder: 1px solid #bcb2fd;
+}
+
+.share-button:hover {
+  background: linear-gradient(270deg, #bcb2fd 0.29%, #d65622 92%);
+}
+
+.share-button:hover > * {
+  color: white;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
