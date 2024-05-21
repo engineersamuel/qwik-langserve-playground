@@ -1,12 +1,56 @@
-# Qwik City App ⚡️
+- [Qwik ⚡️LangServe Playground](#qwik-️langserve-playground)
+  - [Setup](#setup)
+    - [Langserve](#langserve)
+    - [Qwik Frontend](#qwik-frontend)
+  - [Project Structure](#project-structure)
+  - [Add Integrations and deployment](#add-integrations-and-deployment)
+  - [Development](#development)
+  - [Preview](#preview)
+  - [Production](#production)
+  - [Reference](#reference)
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+# Qwik ⚡️LangServe Playground
 
 ---
+
+## Setup
+
+### Langserve
+
+- `pip install langchain-cli`
+- `langchain app new my-app`
+- When prompted “What package would you like to add?” type: `pirate-speak`
+- It will say `1 added. Any more packages (leave blank to end)?)` and hit enter
+- Then it will prompt, `Would you like to install these templates into your environment with pip? [y/N]` and type `y`
+- `cd my-app/`
+- Then run `poetry shell`
+- edit the app/server.py and replace the `add_routes(app, NotImplemented)` with:
+
+```py
+
+from pirate_speak.chain import chain as pirate_speak_chain
+
+
+add_routes(
+    app,
+    pirate_speak_chain,
+    path="/pirate-speak",
+    playground_type="chat",
+)
+```
+
+- Now run `langchain serve` and verify you can access [http://127.0.0.1:8000/pirate-speak/playground/](http://127.0.0.1:8000/pirate-speak/playground/)
+
+### Qwik Frontend
+
+Next let us use Qwik.
+
+- `git clone git@github.com:engineersamuel/qwik-langserve-playground.git`
+- `cd qwik-langserve-playground`
+- Run `npm i` to install dependencies
+- Create a .env file and add: `LANGSERVE_BASE_URL=http://127.0.0.1:8000/pirate-speak`
+- `npm run dev`
+- Open your browser and go to [http://localhost:5173/](http://localhost:5173/) and type "Hello!" into the input box.
 
 ## Project Structure
 
@@ -14,7 +58,7 @@ This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/over
 
 Inside your project, you'll see the following directory structure:
 
-```
+```text
 ├── public/
 │   └── ...
 └── src/
@@ -63,3 +107,11 @@ The production build will generate client and server modules by running both cli
 ```shell
 npm run build # or `yarn build`
 ```
+
+## Reference
+
+- [Qwik Docs](https://qwik.builder.io/)
+- [Discord](https://qwik.builder.io/chat)
+- [Qwik GitHub](https://github.com/BuilderIO/qwik)
+- [@QwikDev](https://twitter.com/QwikDev)
+- [Vite](https://vitejs.dev/)
