@@ -1,5 +1,7 @@
 # Qwik ⚡️LangServe Playground
 
+This repo contains a standalone LangServe Chat Playground frontend, written in [Qwik](https://qwik.builder.io/docs/), that utilizes generator functions for streaming from the backend LangServe [Event Source](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
+
 - [Setup](#setup)
   - [Langserve](#langserve)
   - [Qwik Frontend](#qwik-frontend)
