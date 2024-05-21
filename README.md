@@ -1,17 +1,14 @@
-- [Qwik ⚡️LangServe Playground](#qwik-️langserve-playground)
-  - [Setup](#setup)
-    - [Langserve](#langserve)
-    - [Qwik Frontend](#qwik-frontend)
-  - [Project Structure](#project-structure)
-  - [Add Integrations and deployment](#add-integrations-and-deployment)
-  - [Development](#development)
-  - [Preview](#preview)
-  - [Production](#production)
-  - [Reference](#reference)
-
 # Qwik ⚡️LangServe Playground
 
----
+- [Setup](#setup)
+  - [Langserve](#langserve)
+  - [Qwik Frontend](#qwik-frontend)
+- [Project Structure](#project-structure)
+- [Add Integrations and deployment](#add-integrations-and-deployment)
+- [Development](#development)
+- [Preview](#preview)
+- [Production](#production)
+- [Reference](#reference)
 
 ## Setup
 
